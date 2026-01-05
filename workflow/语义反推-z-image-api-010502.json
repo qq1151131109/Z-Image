@@ -1,0 +1,195 @@
+{
+  "3": {
+    "inputs": {
+      "text": [
+        "17",
+        0
+      ],
+      "clip": [
+        "15",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码"
+    }
+  },
+  "4": {
+    "inputs": {
+      "text": "ai-generated,  worst detail, sketch, monochrome,   rough sketch, fewer digits, extra digits, signature, watermark, sample watermark, logo, artist name, patreon logo, censor, censored, web address, copyright name, dated, patreon, username, dust particles",
+      "clip": [
+        "15",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码"
+    }
+  },
+  "5": {
+    "inputs": {
+      "seed": 631790126932967,
+      "steps": 9,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "15",
+        0
+      ],
+      "positive": [
+        "3",
+        0
+      ],
+      "negative": [
+        "4",
+        0
+      ],
+      "latent_image": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "K采样器"
+    }
+  },
+  "6": {
+    "inputs": {
+      "width": 1024,
+      "height": 1536,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "空Latent图像"
+    }
+  },
+  "7": {
+    "inputs": {
+      "samples": [
+        "5",
+        0
+      ],
+      "vae": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "8": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "保存图像"
+    }
+  },
+  "10": {
+    "inputs": {
+      "unet_name": "z_image_turbo_bf16.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "UNet加载器"
+    }
+  },
+  "11": {
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "加载VAE"
+    }
+  },
+  "12": {
+    "inputs": {
+      "clip_name": "qwen_3_4b.safetensors",
+      "type": "qwen_image",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "加载CLIP"
+    }
+  },
+  "15": {
+    "inputs": {
+      "lora_name": "ai-toolkit/shenglin05/shenglin05.safetensors",
+      "strength_model": 0.8,
+      "strength_clip": 1,
+      "model": [
+        "10",
+        0
+      ],
+      "clip": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "加载LoRA"
+    }
+  },
+  "16": {
+    "inputs": {
+      "image": "CvCeU5rhQHP_00.jpg"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "加载图像"
+    }
+  },
+  "17": {
+    "inputs": {
+      "text": "Analyze the image and generate a text prompt for image generation.\n\n**Instructions:**\n1. **Output Language:** English only.\n2. **Trigger Word (Mandatory):** You **MUST** start the generated text with the trigger word \"**ohmx, **\" followed immediately by the description.\n3. **Subject:** Describe the character's gender, hairstyle, clothing, pose, and actions.\n4. **Environment:** Describe the background, lighting, and objects.\n5. **Style:** Describe the amateur, raw smartphone photography vibes.\n\n**Strict Constraints:**\n- **DO NOT** describe specific facial features (e.g., do not mention eye color, nose shape, lip shape, or makeup details).\n- **Focus on:** Texture, lighting atmosphere, and the \"imperfect\" reality of the photo.\n\n**Mandatory Style Keywords:**\nAt the very end of your description, ALWAYS append the following keywords:\n\", Shot on iPhone, authentic snapshot, visible pores, uneven skin tone, messy background, chromatic aberration, harsh flash, motion blur, Raw photo.\"",
+      "model": "Qwen3-VL-4B-Instruct-FP8",
+      "quantization": "none",
+      "keep_model_loaded": false,
+      "temperature": 0.7,
+      "max_new_tokens": 2048,
+      "min_pixels": 200704,
+      "max_pixels": 1003520,
+      "seed": 1241,
+      "attention": "eager",
+      "image": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "Qwen3_VQA",
+    "_meta": {
+      "title": "Qwen3 VQA"
+    }
+  },
+  "18": {
+    "inputs": {
+      "preview": "",
+      "previewMode": null,
+      "source": [
+        "17",
+        0
+      ]
+    },
+    "class_type": "PreviewAny",
+    "_meta": {
+      "title": "预览任意"
+    }
+  }
+}

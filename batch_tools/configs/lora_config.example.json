@@ -1,0 +1,30 @@
+{
+  "loras": [
+    {
+      "name": "shenglin05",
+      "path": "/home/ubuntu/shenglin/ComfyUI/models/loras/ai-toolkit/shenglin05/shenglin05.safetensors",
+      "scale": 0.8
+    },
+    {
+      "name": "cuiii-32",
+      "path": "/home/ubuntu/shenglin/ComfyUI/models/loras/ai-toolkit/cuiii-32/cuiii-32.safetensors",
+      "scale": 0.8
+    },
+    {
+      "name": "cute-ying-32",
+      "path": "/home/ubuntu/shenglin/ComfyUI/models/loras/ai-toolkit/cute-ying-32/cute-ying-32.safetensors",
+      "scale": 0.8
+    },
+    {
+      "name": "nini-32",
+      "path": "/home/ubuntu/shenglin/ComfyUI/models/loras/ai-toolkit/nini-32/nini-32.safetensors",
+      "scale": 0.8
+    },
+    {
+      "name": "xiaoli-32",
+      "path": "/home/ubuntu/shenglin/ComfyUI/models/loras/ai-toolkit/xiaoli-32/xiaoli-32.safetensors",
+      "scale": 0.8
+    }
+  ],
+  "_comment": "每个LoRA都会生成所有提示词对应的图像，输出按LoRA名称分组到不同目录"
+}

@@ -6,7 +6,7 @@ __pycache__/
 # C extensions
 *.so
 outputs/
-prompts/
+/prompts/
 # Distribution / packaging
 .Python
 build/
@@ -215,3 +215,10 @@ ckpts/
 
 # Ignore generated images
 /*.png
+# Avatar generation output
+avatar_generation/output/
+avatar_generation/logs/
+avatar_generation/data/
+batch_tools/logs/
+batch_tools/output/
+batch_tools/test_images/

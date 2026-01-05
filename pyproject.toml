@@ -15,7 +15,9 @@ dependencies = [
     "loguru",
     "pillow",
     "accelerate",
-    "huggingface_hub>=0.25.0"
+    "huggingface_hub>=0.25.0",
+    "peft>=0.13.0",
+    "tqdm"
 ]
 
 [project.optional-dependencies]
